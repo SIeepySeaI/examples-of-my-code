@@ -1,0 +1,80 @@
+﻿<Window x:Class="COM_Port_Ed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+        xmlns:local="clr-namespace:COM_Port_Ed"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="150*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="176*"/>
+            <ColumnDefinition Width="237*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Режим работы вентилятора:" Grid.Column="1" HorizontalAlignment="Left" Margin="1,20,0,0" VerticalAlignment="Top" Width="176" Height="26" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <Button Content="Задать" HorizontalAlignment="Left" Margin="84,49,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348" Grid.Row="1"/>
+        <Label Content="Температура в помещении:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="163" Height="26"/>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="43" Margin="178,10,0,0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.ColumnSpan="2">
+            <TextBlock x:Name="data_Temp" TextWrapping="Wrap" Margin="-2,2,-1,-2" FontSize="15" FontWeight="Bold"/>
+        </Border>
+        <TextBox x:Name="Temp_set" HorizontalAlignment="Left" Height="27" Margin="28,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Grid.Row="1"/>
+        <Label Content="Режим работы:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="96" Height="23" Grid.Column="1" Margin="1,0,0,60" Grid.Row="1"/>
+        <Label Content="Значение поддерживаемой &#xD;&#xA;температуры:" HorizontalAlignment="Left" Margin="13,3,0,0" VerticalAlignment="Top" Width="165" Height="42" Grid.Row="1"/>
+        <TabControl Grid.Column="2" HorizontalAlignment="Left" Height="417" Margin="0.0,0,0,0" VerticalAlignment="Top" Width="236" Grid.RowSpan="4">
+            <TabItem Header="Доп. настройки" Height="22" VerticalAlignment="Top" Margin="-2,2,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Min температура:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Height="39" Margin="12,192,0,0"/>
+                    <TextBox HorizontalAlignment="Left" Height="27" Margin="12,231,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51"/>
+                    <Label Content="Max температура:" HorizontalAlignment="Left" Margin="12,121,0,0" VerticalAlignment="Top" Width="112" Height="39"/>
+                    <TextBox HorizontalAlignment="Left" Height="27" Margin="12,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51"/>
+                    <Label Content="Доступные способы &#xD;&#xA;поддержания температуры:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Height="42" Margin="10,271,0,0"/>
+                    <Button Content="Задать" HorizontalAlignment="Left" Margin="68,231,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348"/>
+                    <Button Content="Задать" HorizontalAlignment="Left" Margin="68,160,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348"/>
+                    <RadioButton x:Name="Sys_Mod_1" Content="Только охлаждение" Margin="19,317,83,53" Checked="Sys_mod_Checked"/>
+                    <RadioButton x:Name="Sys_Mod_2" Content="Только нагрев" Margin="19,336,113,34" Checked="Sys_mod_Checked"/>
+                    <RadioButton x:Name="Sys_Mod_0" Content="Оба способа" Margin="19,355,121,15" Checked="Sys_mod_Checked"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Время" Height="24" VerticalAlignment="Bottom" Margin="-2,-2,-2,2">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox HorizontalAlignment="Left" Height="27" Margin="10,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51"/>
+                    <TextBox HorizontalAlignment="Left" Height="27" Margin="66,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51"/>
+                    <Button Content="Задать" HorizontalAlignment="Left" Margin="122,38,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348"/>
+                    <TextBox HorizontalAlignment="Left" Height="27" Margin="10,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51"/>
+                    <Button Content="Задать" HorizontalAlignment="Left" Margin="69,94,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348"/>
+                    <Label Content="Время на приборе:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="123" Height="23"/>
+                    <Label Content="День недели:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="123" Height="23"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label Content="Режим работы установок:" HorizontalAlignment="Left" Margin="16,20,0,0" VerticalAlignment="Top" Width="176" Height="26" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <Button Content="Задать" HorizontalAlignment="Left" Margin="84,43,0,0" VerticalAlignment="Top" Width="48" Click="Save_Click" Height="27" RenderTransformOrigin="0.662,-2.348" Grid.Row="3"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="28,43,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Grid.Row="3"/>
+        <Label Content="Значение поддерживаемой&#xA;температуры в режиме Antifreeze:" HorizontalAlignment="Left" Margin="13,1,0,0" VerticalAlignment="Top" Width="220" Height="42" Grid.ColumnSpan="2" Grid.Row="3"/>
+        <RadioButton x:Name="fan_Mod_0" GroupName="fan_Mod" Content="Автоматический" Checked="fan_mod_Checked" Grid.Column="1" Margin="8,50,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110" Grid.Row="2"/>
+        <RadioButton x:Name="fan_Mod_1" GroupName="fan_Mod" Content="Низкий" Checked="fan_mod_Checked" Grid.Column="1" Margin="8,69,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Grid.Row="2"/>
+        <RadioButton x:Name="fan_Mod_2" GroupName="fan_Mod" Content="Средний" Checked="fan_mod_Checked" Grid.Column="1" Margin="8,88,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" Grid.Row="2"/>
+        <RadioButton x:Name="fan_Mod_3" GroupName="fan_Mod" Content="Максимальный" Checked="fan_mod_Checked" Grid.Column="1" Margin="8,107,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="104" Grid.Row="2"/>
+        <RadioButton Content="Выключение" Margin="28,53,0,0" HorizontalAlignment="Left" Width="90" Height="15" VerticalAlignment="Top" Grid.Row="2"/>
+        <RadioButton Content="Режим AntiFreeze" Margin="28,72,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" Grid.Row="2"/>
+        <RadioButton Content="Режим экономии" Margin="28,91,0,0" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" Grid.Row="2"/>
+        <RadioButton x:Name="work_Mod_1" GroupName="work_Mod" Content="Охлаждение" Grid.Column="1" Margin="8,0,0,41" Checked="work_mod_Checked" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="88" Grid.Row="1"/>
+        <RadioButton x:Name="work_Mod_2" GroupName="work_Mod" Content="Обогрев" Grid.Column="1" Margin="8,0,0,22" Checked="work_mod_Checked" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="66" Grid.Row="1"/>
+        <TextBox x:Name="bit_c" HorizontalAlignment="Left" Height="24" Margin="28,79,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2" Grid.Row="3"/>
+        <Button Content="Запрос" Grid.Column="1" HorizontalAlignment="Left" Margin="69,54,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="3" Height="20"/>
+
+
+
+    </Grid>
+
+
+</Window>

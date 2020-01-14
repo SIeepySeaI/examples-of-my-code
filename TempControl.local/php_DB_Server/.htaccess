@@ -1,0 +1,7 @@
+php_flag display_errors On
+#показать все ошибки кроме предупреждений (Notice)
+php_value error_reporting "E_ALL & ~E_NOTICE"
+AuthType Basic
+AuthName "Protected Area"
+AuthUserFile /var/www/.htpasswd
+Require valid-user

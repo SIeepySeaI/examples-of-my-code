@@ -1,0 +1,192 @@
+
+#main{
+    min-width: 1920px;
+    min-height: 1080px;
+    background:url(../img/Workshop_plan.png) no-repeat rgb(255, 255, 255);
+    background-size: 100%;
+    position: absolute;
+    /*Свойства сдвига враво при вызове меню*/
+    transition: margin-left.5s;
+    padding: 20px;
+}
+/* границы зон */
+/* .borderZone{
+    position: absolute;
+    
+    border-style: solid;
+    border-width: 3px;
+}
+#border0{
+    left: 78.78%;top: 5.8%;
+    border-color: rgba(10, 87, 159, 0.5);
+    box-shadow: 1px 1px 26px 1px rgba(10, 87, 159, 0.5) inset;
+    width: 17.96%;
+    height: 53.6%;
+}
+#border1{
+    left: 39.2%;top: 5.8%;
+    border-color: rgba(10, 32, 159, 0.5);
+    box-shadow: 1px 1px 26px 1px rgba(10, 32, 159, 0.5) inset;
+    width: 39.59%;
+    height: 26%;
+}
+#border2{
+    left: 39.2%;top: 31.8%;
+    border-color: rgba(159, 32, 10, 0.5);
+    box-shadow: 1px 1px 26px 1px rgba(159, 32, 10, 0.5) inset;
+    width: 39.59%;
+    height: 30%;
+}
+#border3{
+    left: 8.2%;top: 31.8%;
+    border-color: rgba(159, 124, 10, 0.5);
+    box-shadow: 1px 1px 26px 1px rgba(159, 124, 10, 0.5) inset;
+    width: 33%;
+    height: 30%;
+}
+#border4{
+    left: 6.5%;top: 4%;
+    border-color: rgba(159, 90, 10, 0.5);
+    box-shadow: 1px 1px 26px 1px rgba(159, 90, 10, 0.5) inset;
+    width: 31%;
+    height: 30%;
+} */
+/* показатели температуры */
+.temperature{
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+#temp0{ left: 93.4%; top: 27.4%;
+}
+#temp1{ left: 58.4%; top: 57.2%;
+}
+#temp2{ left: 49.9%; top: 6.4%;
+}
+#temp3{ left: 7.7%; top: 4.6%;
+}
+#temp4{ left: 9.2%; top: 41.4%;
+}
+#temp5{ left: 4.3%; top: 62.5%;
+}
+#temp6{ left: 21.4%; top: 81.8%;
+}
+#temp7{ left: 39.5%; top: 63%;
+}
+
+/*датчики и тепловентиляторы*/
+.tempControl{
+    position: absolute;
+    width: 5%;
+    cursor: pointer;
+}
+
+.tempControl.item0{ left: 92%; top: 26%;
+}
+.tempControl.item1{ left: 57%; top: 55.7%;
+}
+.tempControl.item2{ left: 48.5%; top: 5%;
+}
+.tempControl.item3{ left: 6.3%; top: 3.2%;
+}
+.tempControl.item4{ left: 7.8%; top: 40%;
+}
+.tempControl.item5{ left: 2.9%; top: 61%;
+}
+.tempControl.item6{ left: 20%; top: 80.5%;
+}
+.tempControl.item7{ left: 38%; top: 61.5%;
+}
+/*фрезерная*/
+.fan{
+    width: 2%;
+    position: absolute;
+}
+.fan.item1{ left: 12%; top: 4.5%;
+}
+.fan.item2{ left: 16%; top: 4.5%;
+}
+.fan.item3{ left: 20%; top: 4.5%;
+}
+.fan.item4{ left: 24%; top: 4.5%;
+}
+.fan.item5{ left: 28%; top: 4.5%;
+}
+.fan.item6{ left: 32%; top: 4.5%;
+}
+/*вторая группа вентиляторов(основное помещение)*/
+.fan.item7{ left: 40%; top: 6.5%;
+}
+.fan.item8{ left: 46%; top: 6.5%;
+}
+.fan.item9{ left: 54%; top: 6.5%;
+}
+.fan.item10{ left: 61%; top: 6.5%;
+}
+.fan.item11{ left: 67%;top: 6.5%;
+}
+.fan.item12{ left: 74%;top: 6.5%;
+}
+.fan.item13{ left: 80%;top: 6.5%;
+}
+.fan.item14{ left: 86%;top: 6.5%;
+}
+.fan.item15{ left: 92%;top: 6.5%;
+}
+/*3-я группа вентиляторов(основное помещение)*/
+.fan.item16{ left: 18%;top: 37%;
+}
+.fan.item17{ left: 36%;top: 37%;
+}
+.fan.item18{ left: 80%;top: 37%;
+}
+/*4-я группа вентиляторов(основное помещение)*/
+.fan.item19{ left: 8.2%;top: 58%;
+}
+.fan.item20{ left: 17%;top: 58%;
+}
+.fan.item21{ left: 23%;top: 58%;
+}
+.fan.item22{ left: 30%;top: 58%;
+}
+.fan.item23{ left: 36%;top: 58%;
+}
+.fan.item24{ left: 41%;top: 58%;
+}
+.fan.item25{ left: 47%;top: 58%;
+}
+.fan.item26{ left: 54%;top: 58%;
+}
+.fan.item27{ left: 64%;top: 58%;
+}
+.fan.item28{ left: 74%;top: 58%;
+}
+.fan.item29{ left: 86%;top: 56%;
+}
+.fan.item30{ left: 80%;top: 56%;
+}
+.fan.item31{ left: 93%;top: 56%;
+}
+/*5-я группа вентиляторов(Малое помещение)*/
+.fan.item32{ left: 5.6%;top: 67%;
+}
+.fan.item33{ left: 5.6%;top: 71%;
+}
+/*6-я группа вентиляторов*/
+.fan.item34{ left: 10%;top: 72%;
+}
+.fan.item35{ left: 18%;top: 72%;
+}
+.fan.item36{ left: 25%;top: 72%;
+}
+.fan.item37{ left: 32%;top: 72%;
+}
+.fan.item38{ left: 42%;top: 72%;
+}
+.fan.item39{ left: 25%;top: 72%;
+}
+.fan.item40{ left: 57%;top: 72%;
+}
+
+
